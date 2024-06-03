@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<body <h1>How to draw an incline:</h1>
+
+
+
+
+  <br><br>
+  <svg height="270" width="500">
+    rect {
+    transform-origin: center;
+    transform-box: fill-box;
+    }
+    <polygon points="50,100 50,250 400,250" style="fill:white;stroke:purple;stroke-width:1" />
+    <rect id+"rect" transform="rotate(22.9)" width="50" height="50" x="100" y="22.9" rx="0" ry="0" fill="white"
+      stroke="purple" stroke-width="1" />
+  </svg>
+
+  <!-- type default text (will change it to user values for next steps) -->
+  <br><br>
+  vo = 0
+  <br><br>
+  Fnet = m*a
+  <br><br>
+  Fnet = m*g*sinθ - Fn*uk (Fn = m*g*cosθ)
+  <br><br>
+  a = Fnet/m = g*sinθ - g*cosθ*uk
+  <br><br>
+  x = hypotenuse length*cosθ
+  <br><br>
+  To find the final velocity using kinematic equation:
+  <img src="Eq_Kin.png" alt="Kinematic equation without time" width="120" height="30">
+
+  <p id="d">The net force is </p>
+  <p id="a">The acceleration is </p>
+  <p id="demo">The final velocity is </p>
+  <script>
+    var m = 5.0;
+    var uk = 0.01;
+    var g = 10;
+    var theta = 30;
+    var len = 10;
+
+
+    function toRadians(angle) {
+      return angle * (Math.PI / 180.0);
+    }
+
+    var Fnet = m * g * Math.sin(toRadians(theta)) - m * g * Math.cos(toRadians(theta)) * uk;
+    var a = Fnet / m;
+    var x = len * Math.cos(toRadians(theta));
+
+    var vel2 = 2 * a * x;
+    var velocity = Math.sqrt(vel2);
+    document.getElementById("d").innerHTML += Fnet;
+    document.getElementById("a").innerHTML += a;
+    document.getElementById("demo").innerHTML += velocity;
+
+  </script>
+
+</body>
+
+</html>
